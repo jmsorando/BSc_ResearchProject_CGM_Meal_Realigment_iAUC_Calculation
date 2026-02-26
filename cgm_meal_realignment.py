@@ -99,7 +99,7 @@ def step1():
         pids = [p.strip() for p in raw.replace("/",",").split(",") if p.strip()]
         cgm_path, chosen = None, pids[0] if pids else raw
         for pid in pids:
-            c = BASE/f"CGM_{pid}.csv"
+            c = BASE/"cgm_data"/f"CGM_{pid}.csv"
             if c.exists(): cgm_path, chosen = c, pid; break
         if mf24 not in mapping or (mapping[mf24][1] is None and cgm_path):
             mapping[mf24] = (chosen, cgm_path)

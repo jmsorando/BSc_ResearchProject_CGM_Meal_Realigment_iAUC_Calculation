@@ -33,7 +33,7 @@ The pipeline runs in 10 steps:
 |------|-------------|
 | `patient_extract0912_filtered_corrected.csv` | Food diary export from MyFood24 with columns: Patient Id, Date, Time consumed at, Item added at, Meal, Food name, CHO, FAT, PROT, KCALS, TOTSUG, AOACFIB |
 | `MyFood24 ID Matched(Sheet1).csv` | Mapping of Participant ID to MyFood24 ID |
-| `CGM_<ParticipantID>.csv` | Per-participant CGM files with columns: isoDate, event_type, event_subtype, glucose (mmol/L), duration |
+| `cgm_data/CGM_<ParticipantID>.csv` | Per-participant CGM files with columns: isoDate, event_type, event_subtype, glucose (mmol/L), duration |
 
 ## Output Files
 
@@ -97,9 +97,10 @@ pip install pandas numpy scipy matplotlib
 
 ## Usage
 
-1. Place the food diary CSV, ID mapping CSV, and all `CGM_*.csv` files in the same directory as the script.
-2. Update the `BASE` path in `cgm_meal_realignment.py` to point to that directory.
-3. Run:
+1. Place the food diary CSV and ID mapping CSV in the same directory as the script.
+2. Place all `CGM_*.csv` files in a `cgm_data/` subdirectory.
+3. Update the `BASE` path in `cgm_meal_realignment.py` to point to the project directory.
+4. Run:
 
 ```bash
 python cgm_meal_realignment.py
