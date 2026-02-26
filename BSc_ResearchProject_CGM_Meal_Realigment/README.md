@@ -1,1 +1,0 @@
-# BSc_ResearchProject_CGM_Meal_Realigment
